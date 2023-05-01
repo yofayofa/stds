@@ -2,7 +2,7 @@
 
 ## Download images
 
-サイゼリヤ公式：https://www.saizeriya.co.jp/entertainment/
+https://www.saizeriya.co.jp/entertainment/
 
 ## Example
 
