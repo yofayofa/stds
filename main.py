@@ -6,6 +6,16 @@ import numpy as np
 from PIL import Image, ImageChops
 
 
+parser = argparse.ArgumentParser(description='Find the difference between two similar images aligned on the left and right.')
+parser.add_argument('--input_img', '-i', type=str, default='images/body.png', help='input image path')
+parser.add_argument('--output_dir', '-o', type=str, default='images', help='output directory')
+args = parser.parse_args()
+
+input_path = Path(args.input_img)
+output_path = Path(args.output_dir)
+output_path.mkdir(exist_ok=True)
+
+
 def remove_white(img) -> Image:
     background = Image.new('RGB', img.size, img.getpixel((0,0)))
     diff_img = ImageChops.difference(img, background)
@@ -26,19 +36,12 @@ def split_image(img) -> tuple:
         print(left_img.size, right_img.size)
         right_img = right_img.resize(left_img.size, Image.LANCZOS)
     
-    left_img.save('left.png')
-    right_img.save('right.png')
+    left_img.save(output_path / 'left.png')
+    right_img.save(output_path / 'right.png')
     return np.array(left_img), np.array(right_img)
 
 
 def main():
-    
-    parser = argparse.ArgumentParser(description='Find the difference between two similar images aligned on the left and right.')
-    parser.add_argument('--input', '-i', type=str, default='body.png', help='input image path')
-    parser.add_argument('--output', '-o', type=str, default='diff', help='output image path')
-    args = parser.parse_args()
-    
-    input_path = Path(args.input)
     
     img = Image.open(input_path)
     img = remove_white(img)
@@ -46,7 +49,7 @@ def main():
     
     diff = left.astype(int) - right.astype(int)
     diff = np.abs(diff)
-    cv2.imwrite('diff.png', diff)
+    cv2.imwrite(str(output_path) + '/diff.png', diff)
     
 
 if __name__ == "__main__":

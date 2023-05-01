@@ -1,11 +1,17 @@
 # Spot the difference in saizeriya
 
-## サイゼリヤ公式HPから間違い探しの画像をダウンロードする
+## Download images
 
 サイゼリヤ公式：https://www.saizeriya.co.jp/entertainment/
 
-## 例
+## Example
 
 ```
+git clone https://github.com/yofayofa/stds.git
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 python main.py
 ```
+
+Image is output.
