@@ -13,5 +13,3 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python main.py -i images/body.png -o images
 ```
-
-![difference](images/diff.png "diff.png")
