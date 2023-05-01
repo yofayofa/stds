@@ -14,4 +14,4 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Image is output.
+![difference](images/diff.png "diff.png")
