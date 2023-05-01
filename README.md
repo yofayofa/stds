@@ -11,7 +11,7 @@ git clone https://github.com/yofayofa/stds.git
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python main.py
+python main.py -i images/body.png -o images
 ```
 
 ![difference](images/diff.png "diff.png")
