@@ -8,6 +8,7 @@ https://www.saizeriya.co.jp/entertainment/
 
 ```
 git clone https://github.com/yofayofa/stds.git
+cd stds
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
