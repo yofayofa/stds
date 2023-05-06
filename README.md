@@ -1,4 +1,4 @@
-# Spot the difference at saizeriya
+# Spot the difference in saizeriya
 
 ## Download images
 
